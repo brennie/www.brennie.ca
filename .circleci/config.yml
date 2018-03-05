@@ -1,0 +1,48 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6-stretch
+
+    steps:
+      - checkout
+      - run:
+          name: Install pipenv
+          command: sudo pip install pipenv
+      - run:
+          name: Install dependencies
+          command: pipenv install
+      - run:
+          name: Build
+          command: pipenv run tinker -b
+      - persist_to_workspace:
+          root: .
+          paths:
+            - blog/html/
+
+  deploy:
+    docker:
+      - image: circleci/python:3.6-stretch
+
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install AWS CLI
+          command: sudo pip install awscli
+      - deploy:
+          name: Deploy to S3
+          command: aws s3 sync blog/html/ s3://www.brennie.ca/ --delete
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
