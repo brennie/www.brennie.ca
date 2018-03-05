@@ -35,9 +35,9 @@ Stay tuned for some documentation on how I am deploying this site with Circle CI
 and AWS.
 
 .. _esdoc: https://esdoc.org
-.. _jsdoc: https://jsdoc.org
-.. _typedoc: https://typedoc.org
+.. _jsdoc: http://jsdoc.org
+.. _typedoc: http://typedoc.org
 .. _react-docgen: https://github.com/reactjs/react-docgen
-.. _Sphinx: https://sphinx-doc.org
+.. _Sphinx: http://sphinx-doc.org
 .. _reStructuredText: http://docutils.sourceforge.net/rst.html
-.. _Tinkerer: https://tinkerer.me
+.. _Tinkerer: http://tinkerer.me
