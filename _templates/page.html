@@ -1,0 +1,35 @@
+{% extends "!page.html" %}
+
+{%- block footer -%}
+<footer class="wrapper">
+  {%- if show_copyright -%}
+    <p>&copy; Copyright {{ copyright }}</p>
+    <p>
+      <span xmlns:dct="https://purl.org/dc/terms/"
+            property="dct:title">www.brennie.ca</span>
+      by
+      <a xmlns:cc="http:s//creativecommons.org/ns#"
+         href="https://www.brennie.ca"
+         property="cc:attributionName"
+         rel="cc:attributionURL">Barret Rennie</a>
+      is licensed under a
+      <a rel="license"
+         href="https://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+      </a>.
+    </p>
+    <p>
+      Permissions beyond the scope of this license may be available at
+      <a xmlns:cc="https://creativecommons.org/ns#"
+         href="https://github.com/brennie/www.brennie.ca/issues/"
+         rel="cc:morePermissions">
+        https://github.com/brennie/www.brennie.ca/issues/
+      </a>.
+   </p>
+  {%- endif -%}
+  {%- if show_sphinx -%}
+   Powered by <a href="http://www.tinkerer.me/">Tinkerer</a> and
+   <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  {%- endif -%}
+</footer>
+{%- endblock -%}
